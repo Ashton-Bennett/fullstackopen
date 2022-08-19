@@ -1,0 +1,17 @@
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server->browser: HMTL-code 
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server->browser: css-code 
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server->browser: javascript-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: return the entered field [{"content":"wowrking?","date":"2022-08-19T01:59:59.901Z"}]
+<start note> the next few lines look like someone hacked the course..? <end note>
+browser->server: HTTP GET chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/css/custom.css
+server->browser: 2nd css file (custom.css)
+browser->server: HTTP GET chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/popup/setting-icon.svg
+server->browser: adds an icon
+browser->server: HTTP GET chrome-extension://aegnopegbbhjeeiganiajffnalhlkkjb/img/popup/sts-free-logo.png
+server->browser: didnt show that the last GET responded but does have a preview of the icon
+server->browser: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+browser->server: html file

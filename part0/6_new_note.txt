@@ -1,0 +1,2 @@
+browser->server HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server->browser [{content: "final time", date: "2022-08-19T02:25:06.709Z"}]
