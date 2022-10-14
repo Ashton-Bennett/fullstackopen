@@ -1,0 +1,6 @@
+//This is to recieve all contacts in phonebook.
+GET http://localhost:3001/api/persons
+
+###
+//This is for a single request use the Id after persons/
+GET http://localhost:3001/api/persons/6345ef43706abdeea681b46e
