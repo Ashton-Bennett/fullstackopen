@@ -1,0 +1,12 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFzaHRvbl9iZW5uZXR0ODAxIiwiaWQiOiI2MzVkNTFkMDkzZDJlY2ZhZjg1ZmZjMDciLCJpYXQiOjE2NjcwNjA3MzF9.UfMt0bFvnNsay0K2pP0y2PSc1O1ExM7tejoagJ6M3qk
+ 
+{
+    "title": "turn up the heat",
+    "author": "Ashton Bennett",
+    "url": "www.bennett.org",
+    "likes": 12,
+    "user": "635d51d093d2ecfaf85ffc07"
+}  
+

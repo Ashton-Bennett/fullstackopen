@@ -1,0 +1,12 @@
+DELETE http://localhost:3003/api/blogs/635b2f067bc2a118a6c8b114
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFzaHRvbl9iZW5uZXR0ODAxIiwiaWQiOiI2MzVkNTFkMDkzZDJlY2ZhZjg1ZmZjMDciLCJpYXQiOjE2NjcwNjAxODIsImV4cCI6MTY2NzA2Mzc4Mn0.LODEgm0YqxM0Q4AzgjVLTo6FvAHgSg0N7WLaFdjzgLs
+
+  {
+    "title": "turn up the heat",
+    "author": "Ashton Bennett",
+    "url": "www.bennett.org",
+    "id": "635c64180556815629d0ae36"
+  }
+
+
