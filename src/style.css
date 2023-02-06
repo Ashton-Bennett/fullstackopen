@@ -1,0 +1,38 @@
+.inputGroup:focus-within {
+  color: #9765e0;
+}
+
+.inputGroupBlack:focus-within {
+  color: black;
+}
+.hoverToChangeToPurple:hover {
+  color: #9765e0;
+}
+
+.anchorText {
+  color: black;
+  font-size: 2rem;
+}
+
+.userNameLogin:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #00c2ba inset;
+  -webkit-text-fill-color: white;
+}
+
+.blogStyle {
+  font-size: 2rem;
+  padding-top: 10;
+  padding-left: 2;
+  margin-top: 10;
+  margin-bottom: 10;
+  color: #2f2f31;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+  .error {
+    width: 100px;
+  }
+}
