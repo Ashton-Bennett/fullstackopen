@@ -1,6 +1,17 @@
+const CheckArgLength = (args: string[]) => {
+  if (args.length < 4) throw new Error("Not enough arguments");
+
+  for (let i = 2; i < args.length; i++) {
+    if (isNaN(Number(args[i]))) {
+      throw new Error("Provided values were not all numbers!");
+    }
+  }
+  return "Input is valid";
+};
+
 const trainingDaysCalc = (sessions: number[]) => {
   let numOfTrainingDays: number = 0;
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < sessions.length; i++) {
     if (sessions[i] > 0) {
       numOfTrainingDays += 1;
     }
@@ -44,14 +55,26 @@ const calculateExercises = (sessions: number[], target: number): Result => {
   };
 };
 
-const findInputTimes = () => {
-  const inputGiven: number[] = [];
+interface ResultA {
+  workOutTimeArray: number[];
+  exerciseGoal: number;
+}
+
+const changeInputToNumbers = (): ResultA => {
+  console.log(CheckArgLength(process.argv));
+  const workOutTimeArray: number[] = [];
+  let exerciseGoal: number;
+
   for (let i = 2; i < process.argv.length; i++) {
-    inputGiven.push(parseInt(process.argv[i]));
+    if (i != process.argv.length - 1) {
+      workOutTimeArray.push(parseInt(process.argv[i]));
+    } else {
+      exerciseGoal = parseInt(process.argv[i]);
+    }
   }
-  return inputGiven;
+  return { workOutTimeArray, exerciseGoal };
 };
 
-const exerciseTimes: number[] = findInputTimes();
-const exerciseGoal: number[] = exerciseTimes.slice(-1); //try .at(-1)
-console.log(calculateExercises(exerciseTimes, exerciseGoal));
+const results = changeInputToNumbers();
+
+console.log(calculateExercises(results.workOutTimeArray, results.exerciseGoal));
