@@ -62,8 +62,8 @@ interface ResultA {
 
 const changeInputToNumbers = (): ResultA => {
   console.log(CheckArgLength(process.argv));
-  const workOutTimeArray: number[] = [];
-  let exerciseGoal: number;
+  let workOutTimeArray: number[] = [];
+  let exerciseGoal: number = 0;
 
   for (let i = 2; i < process.argv.length; i++) {
     if (i != process.argv.length - 1) {

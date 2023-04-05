@@ -7,19 +7,18 @@
 // Obese (Class II)	35.0 – 39.9
 // Obese (Class III)	≥ 40.0
 
-const parseArguments = (args: string[]) => {
-  if (args.length < 4) throw new Error("Not enough arguments");
-  if (args.length > 4) throw new Error("Too many arguments");
-
-  if (!isNaN(Number(args[2])) && !isNaN(Number(args[3]))) {
+const parseArguments = (args: number[]) => {
+  if (args.length < 2) throw new Error("Not enough arguments");
+  if (args.length > 2) throw new Error("Too many arguments");
+  if (!isNaN(args[0]) && !isNaN(args[1])) {
     return true;
   } else {
     throw new Error("Provided values were not numbers!");
   }
 };
 
-const calculateBmi = (height: number, weight: number): string => {
-  if (parseArguments(process.argv)) {
+export const calculateBmi = (height: number, weight: number): string => {
+  if (parseArguments([height, weight])) {
     try {
       const currentBmi: number = (weight / Math.pow(height, 2)) * 10_000;
 
@@ -43,8 +42,6 @@ const calculateBmi = (height: number, weight: number): string => {
         default:
           "Unable to calculate";
       }
-
-      return "function returned";
     } catch (error: unknown) {
       let errorMessage = "Something bad happened.";
       if (error instanceof Error) {
@@ -53,8 +50,10 @@ const calculateBmi = (height: number, weight: number): string => {
       console.log(errorMessage);
     }
   }
+  return "function returned";
 };
 
-const a: number = Number(process.argv[2]);
-const b: number = Number(process.argv[3]);
-console.log(calculateBmi(a, b));
+// USED FOR COMMAND LINE FUNCTION
+// const a: number = Number(process.argv[0]);
+// const b: number = Number(process.argv[1]);
+// console.log(calculateBmi(a, b));
