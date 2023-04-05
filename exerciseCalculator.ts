@@ -1,13 +1,13 @@
-const CheckArgLength = (args: string[]) => {
-  if (args.length < 4) throw new Error("Not enough arguments");
+// const CheckArgLength = (args: string[]) => {
+//   if (args.length < 4) throw new Error("Not enough arguments");
 
-  for (let i = 2; i < args.length; i++) {
-    if (isNaN(Number(args[i]))) {
-      throw new Error("Provided values were not all numbers!");
-    }
-  }
-  return "Input is valid";
-};
+//   for (let i = 2; i < args.length; i++) {
+//     if (isNaN(Number(args[i]))) {
+//       throw new Error("Provided values were not all numbers!");
+//     }
+//   }
+//   return "Input is valid";
+// };
 
 const trainingDaysCalc = (sessions: number[]) => {
   let numOfTrainingDays: number = 0;
@@ -40,7 +40,11 @@ interface Result {
   average: number;
 }
 
-const calculateExercises = (sessions: number[], target: number): Result => {
+export const calculateExercises = (
+  sessions: number[],
+  target: number
+): Result | string => {
+  if (sessions.length === 0) return "Input was 0";
   const average = sessions.reduce((a, b) => a + b) / sessions.length;
   const rating = ratingCalc(average, target);
 
@@ -61,7 +65,7 @@ interface ResultA {
 }
 
 const changeInputToNumbers = (): ResultA => {
-  console.log(CheckArgLength(process.argv));
+  // console.log(CheckArgLength(process.argv));
   let workOutTimeArray: number[] = [];
   let exerciseGoal: number = 0;
 
