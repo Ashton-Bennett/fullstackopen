@@ -1,0 +1,14 @@
+POST http://localhost:3001/api/patients/
+content-type: application/json
+
+{
+    "name": "Ashton Bennett",
+    "dateOfBirth": "1990-09-05",
+    "ssn":"090786-122X",
+    "gender": "male",
+    "occupation":"Chef",
+    
+}
+
+###
+GET http://localhost:3001/api/patients
