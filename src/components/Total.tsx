@@ -1,6 +1,6 @@
-import { Courses } from "./Content";
+import { CourseInfo } from "./Content";
 
-const Total = (courseParts: Courses) => {
+const Total = (courseParts: CourseInfo) => {
   return (
     <>
       <p>
