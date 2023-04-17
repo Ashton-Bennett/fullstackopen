@@ -59,11 +59,19 @@ function App() {
   };
 
   const handleVisibilityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setVisibility(e.target.value);
+    // switch (e.target.value) {
+    //   case 'great':
+    //     setVisibility(e.target.value);
+    //     break;
+
+    //   default:
+    //     break;
+    // }
+    setVisibility(e.target.value as Visibility);
   };
 
   const handleWeatherChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setWeather(e.target.value);
+    setWeather(e.target.value as Weather);
   };
 
   return (
